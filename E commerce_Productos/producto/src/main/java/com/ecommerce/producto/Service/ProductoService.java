@@ -63,7 +63,6 @@ public class ProductoService {
             productoDTO.setStock(producto.getStock());
             return productoDTO;
         }).toList();
-
         return productoDTOs;
         
     }
