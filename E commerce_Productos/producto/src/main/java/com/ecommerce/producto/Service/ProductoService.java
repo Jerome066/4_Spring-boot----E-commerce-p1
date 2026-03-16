@@ -1,5 +1,7 @@
 package com.ecommerce.producto.Service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.ecommerce.producto.Dto.ProductoDTO;
@@ -49,5 +51,20 @@ public class ProductoService {
         productoDTO.setStock(producto.getStock());
 
         return productoDTO;
+    }
+
+    public List<ProductoDTO> obtenerListaProductos(){
+        List<Producto> productos = productoRepository.findAll();
+        List<ProductoDTO> productoDTOs = productos.stream().map(producto -> {
+            ProductoDTO productoDTO = new ProductoDTO();
+            productoDTO.setNombre(producto.getNombre());
+            productoDTO.setDescripcion(producto.getDescripcion());
+            productoDTO.setPrecio(producto.getPrecio());
+            productoDTO.setStock(producto.getStock());
+            return productoDTO;
+        }).toList();
+
+        return productoDTOs;
+        
     }
 }

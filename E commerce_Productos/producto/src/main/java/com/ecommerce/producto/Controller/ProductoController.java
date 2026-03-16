@@ -1,5 +1,7 @@
 package com.ecommerce.producto.Controller;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -45,6 +47,11 @@ public class ProductoController {
     @GetMapping("/obtenerproducto/{id}")
     public ProductoDTO obtenerProducto(@RequestParam Long id) {
         return productoService.obtenerProductoPorId(id);
+    }
+    
+    @GetMapping("obtenerlistaproductos")
+    public List<ProductoDTO> obtenerListaProductos() {
+        return productoService.obtenerListaProductos();
     }
     
 }
