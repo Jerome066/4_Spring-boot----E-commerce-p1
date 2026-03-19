@@ -8,10 +8,10 @@ import com.ecommerce.cliente.DTO.ClienteDTO;
 import com.ecommerce.cliente.Model.Cliente;
 import com.ecommerce.cliente.Repository.ClienteRepository;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ClienteService {
     private final ClienteRepository clienteRepository;
     

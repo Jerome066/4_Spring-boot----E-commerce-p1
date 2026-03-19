@@ -2,7 +2,6 @@ package com.ecommerce.producto.Controller;
 
 import java.util.List;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -10,21 +9,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.ecommerce.producto.Dto.ProductoDTO;
 import com.ecommerce.producto.Service.ProductoService;
+
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 
 
 
-@Controller
+@RestController
 @RequestMapping("/producto")
+@RequiredArgsConstructor
 public class ProductoController {
     private final ProductoService productoService;
 
-    public ProductoController(ProductoService productoService) {
-        this.productoService = productoService;
-    }
     
     @PostMapping("/altaproducto/{ProductoDTO}")
     public String altaProducto (@RequestBody ProductoDTO productoDTO) {

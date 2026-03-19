@@ -1,6 +1,7 @@
-package com.ecommerce.cliente.Model;
+package com.ecommerce.pedido.Model;
 
-import jakarta.persistence.Column;
+import java.util.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,20 +13,18 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "cliente")
+@Table(name = "pedido")
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Builder
-
-public class Cliente {
+public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nombre;
-    
-    @Column(unique = true)
-    private String email;
-    private String telefono;
-    private String direccion;
+    private Date fechapedido;
+    private String estado;
+
+    private Long idCliente;
 }

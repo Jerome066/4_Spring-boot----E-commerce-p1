@@ -8,16 +8,15 @@ import com.ecommerce.producto.Dto.ProductoDTO;
 import com.ecommerce.producto.Model.Producto;
 import com.ecommerce.producto.Repository.ProductoRepository;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ProductoService {
     private final ProductoRepository productoRepository;
 
     public void altaProducto(ProductoDTO producto) {
 
-        // Convert DTO to Model if necessary
         Producto productoModel = new Producto();
         productoModel.setNombre(producto.getNombre());
         productoModel.setDescripcion(producto.getDescripcion());
