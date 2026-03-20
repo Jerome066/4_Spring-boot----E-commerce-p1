@@ -8,8 +8,8 @@
 		<version>4.0.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.ecommerce</groupId>
-	<artifactId>pedido</artifactId>
+	<groupId>com.Ecommerce</groupId>
+	<artifactId>detallepedido</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name/>
 	<description/>
